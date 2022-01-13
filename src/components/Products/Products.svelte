@@ -1,9 +1,18 @@
 <script>
     import { onMount, onDestroy } from "svelte";
     import products from "../../stores/defaultProducts";
+    import Product from "./Product.svelte";
+    import Loading from "../Loading.svelte";
+    export let title = "";
 </script>
 
-<h1>Welcome to products component</h1>
-{#each $products as prod}
-    <h2>{prod.title}</h2>
-{/each}
+<section class="section">
+    <h2 class="section-title">{title}</h2>
+    <div class="products-center">
+        {#each $products as product, index (product.id)}
+            <Product {product} />
+        {:else}
+            <Loading />
+        {/each}
+    </div>
+</section>

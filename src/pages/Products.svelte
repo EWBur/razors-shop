@@ -2,4 +2,7 @@
     import Products from "../components/Products/Products.svelte";
 </script>
 
-<Products />
+<svelte:head>
+    <title>Products</title>
+</svelte:head>
+<Products title="our products" />
