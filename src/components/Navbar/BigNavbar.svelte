@@ -2,6 +2,7 @@
     import { link } from "svelte-navigator";
     import CartButton from "../Cart/CartButton.svelte";
     import links from "../../constants/links";
+    import LoginLink from "../LoginLink.svelte";
 </script>
 
 <nav class="navbar">
@@ -24,7 +25,10 @@
                 />
             </a>
             <!-- cart toggle -->
-            <CartButton />
+            <div class="nav-aside">
+                <LoginLink />
+                <CartButton />
+            </div>
         </div>
     </div>
 </nav>

@@ -18,6 +18,6 @@ export default [
     title: "Barber Razor",
     price: 7.99,
     image: "/assets/product-images/product-3.png",
-    amount: 1
+    amount: 2
   }
 ];

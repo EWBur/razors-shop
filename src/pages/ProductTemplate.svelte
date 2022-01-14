@@ -1,10 +1,10 @@
 <script>
     export let id;
-    // global store
-
     import products from "../stores/defaultProducts";
     import Loading from "../components/Loading.svelte";
     import { link } from "svelte-navigator";
+    import globalStore from "../stores/globalStore";
+    import { addToCart } from "../stores/cart";
 
     $: product = $products.find((item) => item.id === parseInt(id));
 </script>
@@ -28,7 +28,10 @@
                 <p>${product.description}</p>
                 <button
                     class="btn btn-primary btn-block"
-                    on:click={() => console.log("Added to cart")}
+                    on:click={() => {
+                        addToCart(product);
+                        globalStore.toggleItem("cart", true);
+                    }}
                 >
                     add to cart
                 </button>
