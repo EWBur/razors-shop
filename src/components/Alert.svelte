@@ -13,6 +13,10 @@
             globalStore.toggleItem("alert", false);
         }, 3000);
     });
+
+    onDestroy(() => {
+        clearTimeout(timeout);
+    });
 </script>
 
 <div
