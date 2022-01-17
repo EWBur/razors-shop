@@ -2,6 +2,7 @@
     import loginUser from "../strapi/loginUser";
     import registerUser from "../strapi/registerUser";
     import { navigate } from "svelte-navigator";
+    import globalStore from "../stores/globalStore";
 
     let email = "";
     let password = "";
@@ -10,7 +11,7 @@
     let isMember = true;
     // add alert
 
-    $: isEmpty = !username || !password || !email;
+    $: isEmpty = !username || !password || !email || $globalStore.alert;
 
     function toggleMember() {
         isMember = !isMember;
@@ -23,6 +24,7 @@
 
     async function handleSubmit() {
         // add alert
+        globalStore.toggleItem("alert", true, "loading...", false);
         let user;
         if (isMember) {
             user = await loginUser({ email, password });
@@ -31,9 +33,20 @@
         }
         if (user) {
             navigate("/products");
-            // add alert
+            globalStore.toggleItem(
+                "alert",
+                true,
+                "welcome to shopping madness my friend",
+                false
+            );
             return;
         }
+        globalStore.toggleItem(
+            "alert",
+            true,
+            "There was an error! Please try again",
+            true
+        );
     }
 </script>
 
