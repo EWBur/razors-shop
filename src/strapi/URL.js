@@ -1,2 +1,2 @@
-export const prodUrl =  "http://localhost:1337/api/";
-export const imgUrl =  "http://localhost:1337/";
+export const prodUrl =  "https://fast-ravine-34248.herokuapp.com/api/";
+export const imgUrl =  "https://fast-ravine-34248.herokuapp.com";

@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "cloudinary": "^1.28.1",
     "sirv-cli": "^2.0.0",
     "svelte-navigator": "^3.1.5"
   }

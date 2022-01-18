@@ -25,7 +25,7 @@
             <article>
                 <h1>{product.title}</h1>
                 <h2>${product.price}</h2>
-                <p>${product.description}</p>
+                <p>{product.description}</p>
                 <button
                     class="btn btn-primary btn-block"
                     on:click={() => {

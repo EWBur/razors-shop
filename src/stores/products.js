@@ -22,7 +22,7 @@ async function setProducts(){
 
 function flattenProducts(data) {
     return data.map(product => {
-        let image = `${imgUrl}${product.attributes.image.data.attributes.url.substring(1)}`;
+        let image = `${product.attributes.image.data.attributes.url}`;
         let attributes = {...product.attributes};
         let id = product.id;
         return {id,...attributes, image};
