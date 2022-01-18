@@ -33,12 +33,7 @@
         }
         if (user) {
             navigate("/products");
-            globalStore.toggleItem(
-                "alert",
-                true,
-                "welcome to shopping madness my friend",
-                false
-            );
+            globalStore.toggleItem("alert", true, "Shop away my friend", false);
             return;
         }
         globalStore.toggleItem(
