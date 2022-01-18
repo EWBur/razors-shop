@@ -11,7 +11,13 @@
     // itemlist
 </script>
 
-<div class="cart-overlay" transition:blur>
+<div
+    class="cart-overlay"
+    transition:blur
+    on:click|self={() => {
+        globalStore.toggleItem("cart", false);
+    }}
+>
     <div class="cart-container" transition:fly={{ x: 100 }}>
         <div class="cart" transition:fade={{ delay: 300 }}>
             <!-- cart header -->
