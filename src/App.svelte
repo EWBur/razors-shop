@@ -1,6 +1,5 @@
 <script>
     import About from "./pages/About.svelte";
-    import checkout from "./pages/checkout.svelte";
     import Home from "./pages/Home.svelte";
     import Login from "./pages/Login.svelte";
     import Checkout from "./pages/Checkout.svelte";
